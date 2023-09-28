@@ -1,0 +1,24 @@
+h1{
+    font-family: 'Abril Fatface', cursive;
+    font-size: 80px;
+    color: aliceblue;
+
+
+}
+
+#search-input{
+    height: 20px;
+    width: 70%;
+
+}
+
+.search-container{
+    padding: 20px;
+    margin: auto;
+    width: 50%;
+
+}
+
+body{
+    background-image: url("https://media.tenor.com/sQDz_xy06NMAAAAC/magic-stars.gif");
+}
