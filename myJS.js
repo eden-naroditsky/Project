@@ -1,3 +1,6 @@
+
+const photos=[]
+
 document.addEventListener("DOMContentLoaded", function () {
     const apiKey = '00b5bc3025c06669c4aecf0a745e058b';
     const searchForm = document.getElementById("search-form");
@@ -29,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     const img = document.createElement("img");
                     img.src = imageUrl;
                     searchResults.appendChild(img);
+
                     img.classList.add("photo");
                     img.classList.add("search-result")
                     addPaginationControls(data.photos.pages);
