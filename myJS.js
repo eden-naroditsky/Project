@@ -56,13 +56,14 @@ document.addEventListener("DOMContentLoaded", function () {
     function displayPhotos(data){
 
         const photosArray=data.photos.photo;
-
+        searchResults.innerHTML="";
         photosArray.forEach(photo => {
             const imageUrl = `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`;
             const img = document.createElement("img");
             img.src = imageUrl;
             searchResults.appendChild(img);
-            img.classList.add("photo search-result");
+            img.classList.add("photo" ,"search-result");
+
 
 
 
