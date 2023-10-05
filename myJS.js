@@ -22,20 +22,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
     });
-    prevButton.style.display = "none"; // Initially hide the prev button
 
-    prevButton.addEventListener("click", () => {
+
+    prevButton.addEventListener("click", async () => {
         if (currPage > 1) {
             currPage--;
-            searchFlickr(searchInput.value.trim(), currPage, perPage)
-                .then((data) => displayPhotos(data));
+            const data = await searchFlickr(searchInput.value.trim(), currPage, perPage);
+            displayPhotos(data);
         }
     });
 
-    nextButton.addEventListener("click", () => {
+    nextButton.addEventListener("click", async () => {
         currPage++;
-        searchFlickr(searchInput.value.trim(), currPage, perPage)
-            .then((data) => displayPhotos(data));
+        const data=await searchFlickr(searchInput.value.trim(), currPage, perPage);
+        displayPhotos(data);
     });
 
     function addPagination(totalPages) {
@@ -55,15 +55,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function displayPhotos(data){
 
-        const photoData=data.photos.photo;
-        searchResults.innerHTML = "";
-        photoData.forEach(photo => {
+        const photosArray=data.photos.photo;
+
+        photosArray.forEach(photo => {
             const imageUrl = `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`;
             const img = document.createElement("img");
             img.src = imageUrl;
             searchResults.appendChild(img);
-            img.classList.add("photo");
-            img.classList.add("search-result");
+            img.classList.add("photo search-result");
+
 
 
         });
