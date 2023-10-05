@@ -17,9 +17,9 @@ h1{
 .search-container{
     height: 200px;
     width: 300px;
-    margin: auto;
     display: flex;
     padding: 40px;
+    margin: auto auto 200px;
 
 }
 
@@ -28,15 +28,18 @@ body{
 }
 
 .search-result{
-
-     /* Adjust the distance as needed */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 10px;
+    margin-bottom: 200px;
 
 }
 
 .photo {
+
     max-width: 100%; /* Adjust the width as needed */
     height: auto; /* Maintain the aspect ratio */
     margin: 30px; /* Add margin to create spacing between photos */
@@ -46,6 +49,7 @@ body{
 
 
 .button{
+    margin-bottom: 100px;
     padding: 10px 10px; /* Add padding for button styling */
     background-color: #063a73; /* Button background color */
     color: #fff; /* Text color */
@@ -86,3 +90,27 @@ body{
 }
 
 
+/* Add this to your CSS */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}

@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         displayPhotos(data);
     });
 
-    function addPagination(totalPages) {
+    function ButtonsControl(totalPages) {
         if (currPage > 1) {
             prevButton.style.display = "block";
         } else {
@@ -68,9 +68,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         });
-        addPagination(data.photos.pages);
+        ButtonsControl(data.photos.pages);
 
     }
+
+    // Function to show search results
+    function showSearchResults() {
+        document.getElementById("search-results").style.display = "block";
+        document.getElementById("favorites").style.display = "none";
+    }
+
+    // Function to show favorite photos
+    function showFavorites() {
+        document.getElementById("search-results").style.display = "none";
+        document.getElementById("favorites").style.display = "block";
+        updateFavoriteUI(); // Update the favorite photos display
+    }
+
+    // Event listener for the "Search" link
+    const searchLink = document.getElementById("nav-search");
+    searchLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        showSearchResults();
+    });
+
+    // Event listener for the "Favorites" link
+    const favoritesLink = document.getElementById("nav-favorites");
+    favoritesLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        showFavorites();
+    });
 
 
 
