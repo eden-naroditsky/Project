@@ -7,18 +7,82 @@ h1{
 }
 
 #search-input{
+    border-radius: 20px; /* Rounded corners */
     height: 20px;
-    width: 70%;
+    width: 180px;
+    padding: 10px;
 
 }
 
 .search-container{
-    padding: 20px;
+    height: 200px;
+    width: 300px;
     margin: auto;
-    width: 50%;
+    display: flex;
+    padding: 40px;
 
 }
 
 body{
     background-image: url("https://media.tenor.com/sQDz_xy06NMAAAAC/magic-stars.gif");
 }
+
+.search-result{
+
+     /* Adjust the distance as needed */
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+
+}
+
+.photo {
+    max-width: 100%; /* Adjust the width as needed */
+    height: auto; /* Maintain the aspect ratio */
+    margin: 30px; /* Add margin to create spacing between photos */
+    border: 1px solid #ccc; /* Add a border around each photo */
+    border-radius: 5px; /* Add rounded corners to the border */
+}
+
+
+.button{
+    padding: 10px 10px; /* Add padding for button styling */
+    background-color: #063a73; /* Button background color */
+    color: #fff; /* Text color */
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    display: none;
+
+
+}
+
+.button:hover{
+    background-color: midnightblue;
+}
+
+
+
+#search-button{
+    border-radius: 20px; /* Rounded corners */
+    padding: 10px;
+}
+
+
+#search-button:hover{
+    background-color: dimgrey;
+}
+#search-results {
+    width: 100%; /* Make the container expand to the available width */
+
+}
+
+#prev {
+    float: left; /* Set the order of the "Previous" button to 1 (left) */
+}
+
+#next {
+    float: right; /* Set the order of the "Next" button to 2 (right) */
+}
+
+
